@@ -1,0 +1,58 @@
+<?php
+// 1. if statement
+$age = 20;
+if ($age >= 20) {
+echo "You are an adult.<br>";
+}
+
+// 2. if...else statement
+$score = 50;
+if ($score >= 60) {
+echo "Pasado!<br>";
+}
+else {
+echo "Agoy, bagsak!<br>";
+}
+
+// 3. if...elseif...else statement
+$grade = 85;
+if ($grade >= 90) {
+echo "Excellent!<br>";
+} 
+elseif ($grade >= 75) {
+echo "Passed!<br>";
+} 
+else {
+echo "Failed ka, need pa mag study ng mabuti!<br>";
+}
+
+// 4. switch statement
+
+$day = "Tuesday";
+
+switch ($day) {
+case "Monday":
+echo "Monday na naman!<br>";
+break;
+
+case "Tuesday":
+echo "Okay tuesday na,mabilis lang ito.<br>";
+break;
+
+case "Wednesday":
+echo "Yown!Rest Day!<br>";
+break;
+
+case "Thursday":
+echo "Almost weekend!<br>";
+break;
+
+case "Friday":
+echo "YES! Friday na, walang pasok bukas!<br>";
+break;
+
+default:
+echo "WALANG PASOK!<br>";
+break;
+}
+?>
