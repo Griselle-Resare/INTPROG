@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>IntProg</title>
+</head>
+<body>
+  <h2>Send JSON Data to PHP</h2>
+
+  <form id="jsonForm">
+    <label>Username:</label>
+    <input type="text" id="username"><br><br>
+
+    <label>Password:</label>
+    <input type="password" id="password"><br><br>
+
+    <button type="button" onclick="sendData()">Send to PHP</button>
+  </form>
+
+  <br><br>  
+  <div id="result"></div>
+
+
+  <script>
+    function sendData() {
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+
+      fetch("lab4_input.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username, password })
+      })
+      .then(res => res.text())
+      .then(data => document.getElementById("result").innerHTML = data)
+      .catch(err => console.error(err));
+    }
+  </script>
+</body>
+</html>
