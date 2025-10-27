@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>XMLHttpRequest</title>
+</head>
+<body>
+    <h2>XHR  Demo</h2>
+
+    <button id="loadBtn">Load Post Data</button>
+
+    <div id="output" style="margin-top: 20px; border: 1px solid #d7a7a7; padding: 10px;">
+    </div>
+
+    <script>
+       
+        const loadBtn = document.getElementById("loadBtn");
+        const output = document.getElementById("output");
+
+       
+        loadBtn.addEventListener("click", function() {
+            
+            const xhr = new XMLHttpRequest();
+
+            xhr.open("GET", "https://jsonplaceholder.typicode.com/posts/1", true);
+
+            xhr.onload = function() {
+                if (xhr.status === 200) {
+                    const post = JSON.parse(xhr.responseText);
+
+                    output.innerHTML = `
+                        <p><strong style="color:black;">Post Title:</strong> ${post.title}</p>
+                        <p><strong>Content:</strong> ${post.body}</p>
+                    `;
+                } else {
+                    output.innerHTML = `<p style="color:red;">Error: Failed to load data. Status ${xhr.status}</p>`;
+                }
+            };
+
+            xhr.onerror = function() {
+                output.innerHTML = `<p style="color:red;">Network Error: Unable to fetch data.</p>`;
+            };
+
+            xhr.send();
+        });
+    </script>
+</body>
+</html>
+
