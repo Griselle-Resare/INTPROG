@@ -1,0 +1,11 @@
+Task 3: Answer the Guide Questions
+
+1. What is the difference between readyState and status in XMLHttpRequest?
+->The readyState property shows the status of an XMLHttpRequest, such as whether it has been sent, is loading, or complete.
+-> The status property shows the HTTP response code from the server, which tells whether the request was successful (200) or if there was an error (404).
+
+2. How can you make the request asynchronous?
+->By adding the true in xhr.open(), which allows the browser to continue working while the data is being loaded.
+
+3. Why is asynchronous communication recommended for web applications?
+            -> Because it allows the browser to continue working and responding to the user while data is being requested from the server.
